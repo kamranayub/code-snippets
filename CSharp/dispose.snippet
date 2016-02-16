@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>dispose</Title>
+			<Shortcut>dispose</Shortcut>
+			<Description>Code snippet for proper 'IDisposable' implementation</Description>
+			<Author>Kamran Ayub</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="False">
+					<ID>class</ID>
+					<Function>ClassName()</Function>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp"><![CDATA[#region IDisposable 
+            private bool _disposed;
+
+            public void Dispose()
+            {
+                Dispose(true);
+                GC.SuppressFinalize(this);
+            }
+
+            ~$class$()
+            {
+                Dispose(false);
+            }
+
+            protected virtual void Dispose(bool disposing)
+            {
+                if (_disposed)
+                    return;
+
+                if (disposing)
+                {
+                    // free other managed objects that implement
+                    // IDisposable only
+                    $end$
+                }
+
+                // release any unmanaged objects
+                // set the object references to null
+
+                _disposed = true;
+            }            
+            #endregion]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
