@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Test Cleanup</Title>
+      <Shortcut>testcl</Shortcut>
+      <Description>Code snippet for a test cleanup</Description>
+      <Author>Kamran Ayub</Author>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>Microsoft.VisualStudio.TestTools.UnitTesting</Namespace>
+        </Import>
+      </Imports>
+      <References>
+        <Reference>
+          <Assembly>Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</Assembly>
+        </Reference>
+      </References>
+      <Declarations>
+          <Literal Editable="false">
+            <ID>TestCleanup</ID>
+            <Function>SimpleTypeName(global::Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanup)</Function>
+          </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[[$TestCleanup$]
+      public void Teardown()
+      {
+          $end$
+      }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
